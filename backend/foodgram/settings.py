@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$sefgs=4-c7$xpwfzo^n4wy$j4ctg=4#&#2jf%se3hrn9o56wd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
     'http://*localhost',
     'https://*localhost',
+    'http://*foodgram-react.ddns.net',
+    'https://*foodgram-react.ddns.net',
 ]
 
 
@@ -92,11 +94,9 @@ CORS_URLS_REGEX = r'^/api/.*$'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),        
-        #'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
-        #'NAME': os.getenv('DB_NAME', default='postgres'),
+    'default': {       
+        'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
+        'NAME': os.getenv('DB_NAME', default='postgres'),
         'USER': os.getenv('POSTGRES_USER', default='postgres'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='postgres'),
         'HOST': os.getenv('DB_HOST', default='db'),
