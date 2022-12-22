@@ -105,4 +105,4 @@ docker-compose exec backend python manage.py collectstatic --noinput
 
 ## Документация к API
 API документация доступна по ссылке (создана с помощью redoc):
-[http://foodgram-react.ddns.net/](http://foodgram-react.ddns.net/)
+[http://foodgram-react.ddns.net/api/docs/](http://foodgram-react.ddns.net/api/docs/)
